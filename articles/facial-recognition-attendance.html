@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+  DRAFT ARTICLE. Replace every [bracketed prompt] with your own words before publishing,
+  or remove this article's entry from js/data.js until it is ready.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What I learned building a facial recognition attendance system | Timothy Olaniran</title>
+  <meta name="description" content="How my SIWES facial recognition attendance system works, what I learned building it, and what I would change today.">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    try {
+      var saved = localStorage.getItem("theme");
+      if (saved === "light" || saved === "dark") document.documentElement.setAttribute("data-theme", saved);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <main class="post">
+    <a class="post-back" href="../index.html#articles">Back to all articles</a>
+    <h1>What I learned building a facial recognition attendance system</h1>
+    <p class="post-meta"><time datetime="2026-11-01">1 Nov 2026</time>, 6 min read</p>
+
+    <div class="prose">
+      <p>During my SIWES internship at the Obafemi Awolowo University Computer Centre, I built a desktop app that takes attendance by recognising faces from a live camera feed. [Add one or two sentences on why attendance needed automating and who would use it.]</p>
+
+      <h2>How it works</h2>
+      <p>The app is written in Python. OpenCV reads frames from the camera, the face_recognition library turns each face into a numeric encoding, and the app compares those encodings against the faces it has already registered. When it finds a match, it writes the person's name and the time to an Excel sheet with openpyxl. The interface is built with CustomTkinter.</p>
+      <p>[Add a screenshot: save it as images/attendance-app.png and replace this paragraph with an img tag.]</p>
+
+      <h2>What was harder than I expected</h2>
+      <p>[Describe one or two real problems you hit, for example recognising people in poor light, two people in frame, speed on a laptop, or duplicate entries, and how you handled each.]</p>
+
+      <h2>What I learned</h2>
+      <p>[Two or three lessons, technical or about working in a team of interns.]</p>
+
+      <h2>What I would change today</h2>
+      <p>[For example: store attendance in a database instead of Excel, add a dashboard, or measure accuracy on a test set of faces.]</p>
+
+      <p>The code is on <a href="https://github.com/Maven-Geek/face_siwes">GitHub</a>.</p>
+    </div>
+  </main>
+</body>
+</html>
