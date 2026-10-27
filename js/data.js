@@ -14,52 +14,61 @@
 
 window.PORTFOLIO = {
   name: "Timothy Olaniran",
-  role: "Data Engineer",
-  location: "Ile-Ife, Nigeria",
+  role: "Data Scientist",
+  location: "Osogbo, Nigeria",
 
-  // Put your photo at images/profile.jpg (portrait, about 800 x 1000 px).
+  // Put your photo at images/my_image.jpg (portrait, about 800 x 1000 px).
   // Until it exists, the site shows your initials instead.
-  photo: "images/profile.jpg",
+  photo: "images/my_image.jpg",
 
   // The opening lines next to your photo. One string per paragraph.
   intro: [
-    "I build data pipelines and machine learning models with Python and SQL, taking raw data to clean, tested tables and useful predictions.",
-    "I graduated with a First Class in Computer Science with Mathematics from Obafemi Awolowo University in 2026, and I am certified by DataCamp in data engineering and data science."
+    "I build machine learning models and turn data into actionable insights with Python, SQL and modern ML frameworks, taking projects from exploratory analysis to deployed, production-ready applications.",
+    "I graduated with a First Class in Computer Science with Mathematics from Obafemi Awolowo University in 2026, and I am certified by DataCamp as both a Data Scientist and a Data Engineer."
   ],
 
-  // Short facts shown under the intro.
+  // Short facts shown under the intro (hidden for now).
+  facts: [],
+  /*
   facts: [
     { label: "Degree", value: "B.Sc. Computer Science with Mathematics, First Class, OAU (2026)" },
-    { label: "Certified", value: "DataCamp Data Engineer and Associate Data Scientist" },
-    { label: "Looking for", value: "Junior data engineering roles, remote or on-site" }
+    { label: "Certified", value: "DataCamp Data Scientist and Data Engineer" },
+    { label: "Looking for", value: "Data science and machine learning roles, remote or on-site" }
   ],
+  */
 
   links: {
     email: "olaniranogoluwa@gmail.com",
     github: "https://github.com/Maven-Geek",
     linkedin: "https://www.linkedin.com/in/timothy-olaniran-8bab7618a/",
-    // Add your resume as resume.pdf in the main folder, or set this to "" to hide the button.
-    resume: "resume.pdf"
+    // Set to "resume.pdf" once ready to show the download button again.
+    resume: ""
   },
 
   skills: [
     { group: "Languages", items: ["Python", "SQL"] },
-    { group: "Data engineering", items: ["PostgreSQL", "ETL pipelines", "Data modeling"] },
-    { group: "Data science and ML", items: ["pandas", "NumPy", "scikit-learn", "XGBoost", "OpenCV", "Matplotlib", "Seaborn"] },
-    { group: "Tools", items: ["Git", "GitHub", "Jupyter"] }
+    { group: "Machine learning", items: ["scikit-learn", "XGBoost", "PyTorch", "ONNX Runtime", "Streamlit"] },
+    { group: "Data analysis", items: ["pandas", "NumPy", "Matplotlib", "Seaborn"] },
+    { group: "Computer vision", items: ["OpenCV", "MobileViTv2", "Grad-CAM", "LRP / zennit"] },
+    { group: "Web and APIs", items: ["FastAPI", "React", "Docker", "REST APIs"] },
+    { group: "Tools", items: ["Git", "GitHub", "Jupyter", "VS Code"] }
   ],
 
   projects: [
-    // Template for your next project. Remove the // at the start of each line to use it.
-    // {
-    //   title: "Naira Exchange Rate ELT Pipeline",
-    //   summary: "Pulls daily exchange rates into PostgreSQL, models them with dbt and refreshes a public dashboard every morning.",
-    //   stack: ["Python", "dlt", "PostgreSQL", "dbt", "Airflow", "Docker"],
-    //   links: [
-    //     { label: "Code", url: "https://github.com/Maven-Geek/REPO" },
-    //     { label: "Dashboard", url: "https://..." }
-    //   ]
-    // },
+    {
+      title: "Dermatology Clinical Decision Support System",
+      url: "https://derm-frontend.vercel.app",
+      summary: "A full-stack AI-powered clinical decision support system that classifies skin lesion images (Atopic Dermatitis, Psoriasis, Tinea) using a MobileViTv2 vision transformer and provides visual explainability through Grad-CAM and LRP heatmaps to help clinicians understand and trust predictions.",
+      stack: ["Python", "PyTorch", "ONNX Runtime", "FastAPI", "React", "Tailwind CSS", "Docker", "Hugging Face Spaces"],
+      links: []
+    },
+    {
+      title: "High Traffic Recipe Prediction",
+      url: "https://shorturl.at/mFAlj",
+      summary: "A data-driven model for Tasty Bytes that predicts which recipes will attract high website traffic, enabling the product team to optimise homepage recipe selection and boost engagement by up to 40%. Achieved ≥80% precision on the target class. Deployed as an interactive Streamlit app.",
+      stack: ["Python", "pandas", "scikit-learn", "Streamlit", "Matplotlib", "Seaborn"],
+      links: [{ label: "Code", url: "https://github.com/Maven-Geek/tasty_bytes_model_deployment" }]
+    },
     {
       title: "Facial Recognition Attendance System",
       summary: "A desktop app that recognises registered people from a live camera feed and records their attendance to an Excel sheet automatically. Built during my SIWES internship at the OAU Computer Centre.",
@@ -81,6 +90,17 @@ window.PORTFOLIO = {
   ],
 
   experience: [
+    {
+      role: "Information Technology Intern",
+      org: "Nigerian Airspace Management Agency",
+      place: "Ikeja, Lagos",
+      start: "Apr 2025",
+      end: "Oct 2025",
+      points: [
+        "Delivered IT hardware support, system maintenance, and troubleshooting across department computers and peripherals.",
+        "Supported local area network (LAN) operations, cabling, and network connectivity troubleshooting."
+      ]
+    },
     {
       role: "Data / IT Intern (SIWES)",
       org: "Obafemi Awolowo University Computer Centre",
@@ -116,10 +136,10 @@ window.PORTFOLIO = {
   ],
 
   certifications: [
-    { title: "Data Engineer", org: "DataCamp", when: "2026", url: "" },
-    { title: "Associate Data Scientist", org: "DataCamp", when: "", url: "https://www.datacamp.com/certificate/DSA0015162725697" }
+    { title: "Associate Data Scientist", org: "DataCamp", when: "2025", url: "https://www.datacamp.com/certificate/DSA0015162725697", image: "images/DS -Cert .jpg" },
+    { title: "Data Engineer", org: "DataCamp", when: "2026", url: "", image: "images/DE - Cert.jpg" }
   ],
 
   // The closing line in the Contact section.
-  contactLine: "Hiring a junior data engineer, or want to build something together? Send me an email."
+  contactLine: "Hiring a data scientist, or want to build something together? Send me an email."
 };

@@ -81,8 +81,11 @@
   // ---------- projects ----------
   fill("projects", (P.projects || []).map(function (p) {
     var links = (p.links || []).map(function (l) { return link(l.label, l.url, "text-link"); });
+    var titleEl = p.url
+      ? h("h3", null, [h("a", { href: p.url, target: "_blank", rel: "noopener", class: "project-title-link", text: p.title })])
+      : h("h3", { text: p.title });
     return h("article", { class: "project" }, [
-      h("h3", { text: p.title }),
+      titleEl,
       h("p", { text: p.summary }),
       p.stack && p.stack.length ? h("p", { class: "stack" }, [h("span", { class: "stack-label", text: "Built with " }), p.stack.join(", ")]) : null,
       links.length ? h("p", { class: "links" }, links) : null
@@ -130,7 +133,23 @@
   fill("certifications", (P.certifications || []).map(function (c) {
     var title = c.url ? link(c.title, c.url) : h("strong", { text: c.title });
     if (c.url) title.classList.add("strong-link");
-    return h("li", null, [title, h("span", { text: c.org + (c.when ? ", " + c.when : "") })]);
+    var certImg = null;
+    if (c.image) {
+      certImg = h("img", { src: c.image, alt: c.title + " certificate", class: "cert-img", loading: "lazy" });
+      certImg.addEventListener("click", function () {
+        var overlay = h("div", { class: "cert-overlay" }, [
+          h("img", { src: c.image, alt: c.title + " certificate" }),
+          h("button", { class: "cert-close", type: "button", "aria-label": "Close", text: "✕" })
+        ]);
+        overlay.addEventListener("click", function (e) {
+          if (e.target === overlay || e.target.classList.contains("cert-close")) {
+            document.body.removeChild(overlay);
+          }
+        });
+        document.body.appendChild(overlay);
+      });
+    }
+    return h("li", null, [title, h("span", { text: c.org + (c.when ? ", " + c.when : "") }), certImg]);
   }));
 
   // ---------- contact and footer ----------
