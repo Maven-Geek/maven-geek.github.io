@@ -162,7 +162,7 @@
   if (P.links.resume) small.push(h("a", { href: P.links.resume, class: "text-link", download: "", text: "Resume (PDF)" }));
   contact.push(h("p", { class: "links" }, small));
   fill("contactLinks", contact);
-  fillText("footer", "© " + new Date().getFullYear() + " " + P.name + ". Built with plain HTML and CSS.");
+  fillText("footer", "© " + new Date().getFullYear() + " " + P.name);
 
   // ---------- lineage rail: section navigation that tracks your place ----------
   var rail = document.querySelector(".rail-list");
@@ -201,7 +201,7 @@
   document.querySelector(".theme-toggle").addEventListener("click", function () {
     var next = currentTheme() === "dark" ? "light" : "dark";
     root.setAttribute("data-theme", next);
-    try { localStorage.setItem("theme", next); } catch (e) {}
+    try { localStorage.setItem("theme", next); } catch (e) { }
   });
 
   // One orchestrated entrance for the intro
